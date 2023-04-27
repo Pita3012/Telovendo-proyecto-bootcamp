@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+
+<script>
+ 
+</script>
+
+</head>
+ 
+<body class="bg-primary-subtle">
+    <div>
+        <br>
+        <H1> Estadisticas</H1>
+        <br>
+        <br>
+  
+<div>
+  <table id="myTable" class="table text-center">
+        <thead> <!-- abro la cabecera de la tabla-->
+          <tr> <!-- creo una fila dentro de una tabla-->
+            <th scope="col">Nombre</th>     <!-- creo una columna para una tabla-->
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Total</th>
+            <th scope="col">Ver</th>
+          </tr> <!-- cierro la fila de la cabecera de la tabla-->
+        </thead><!-- cierro la cabecera de la tabla-->
+        <tbody>
+              <!--
+                paso 1 : ordenar linea que contiene etiqueta <i> (ver linea 49,50,51 como referencia) 
+                paso 2 : darle un argumento 'value' a la etiqueta <i> que tenga el mismo valor que el id (ejemplo linea 40)
+                paso 3 : agregar argumentos "data-bs-toggle y data-bs-target", el valor de data-bs-toggle es modal y el de data-bs-target es el id del modal, ver ejemplo linea 40
+                paso 4 : crear el modal linea 144 hasta 161
+                paso 5 : dentro del modal, agregar la etiqueta img con la ruta correspondiente
+                paso 6 : cambiar el id del modal nuevo (id ej linea 145) y pegarlo en el valor del "data-bs-target (valor ejemplo linea 40)"
+              -->
+          <tr id="almendra" value="2400">
+            <td>Javi</td>
+            <td>Almendras</td>
+            <td>1200</td>
+            <td>2</td>
+            <td >2400</td>
+            <td>
+                <i class="bi bi-eye" data-bs-toggle="modal" data-bs-target="#modal_almendra"></i></td>
+          </tr>
+          <tr  id="papaprefrita" value="7500">
+            <td>Javier</td>
+            <td>Papas Prefritas</td>
+            <td>2500</td>
+            <td >3</td>
+            <td>7500</td>
+            <td id="papaprefrita">
+              <i class="bi bi-eye" data-bs-toggle="modal" data-bs-target="#modal_papaprefrita"></i>
+            </td> 
+          </tr>
+          <tr id="lechuga" value="1000">
+            <td>Franco</td>
+            <td>Lechuga</td>
+            <td>500</td>
+            <td>2</td>
+            <td>1000</td>
+            <td>
+              <i class="bi bi-eye" value="lechuga" data-bs-toggle="modal" data-bs-target="#modal_lechuga"></i></td>
+        </tr>        
+          <tr id="carne1" value="7000">
+            <td>Gabriel</td>
+            <td>Carne</td>
+            <td>7000</td>
+            <td >2</td>
+            <td id="total_4">14000</td>
+            <td> 
+              <i class="bi bi-eye" value="carne" data-bs-toggle="modal" data-bs-target="#modal_carne"></i></td>
+          </tr>
+          <tr id="papas" value="1500">
+            <td>Oscar</td>
+            <td>Papas</td>
+            <td>500</td>
+            <td >3</td>
+            <td>1500</td>
+            <td> 
+              <i class="bi bi-eye" value="papas" data-bs-toggle="modal" data-bs-target="#modal_papas"></i></td>
+          </tr>
+          <tr id="tomate" value="1000">
+            <td>Omar</td>
+            <td>Tomates</td>
+            <td>500</td>
+            <td >2</td>
+            <td>1000</td>
+            <td> 
+              <i class="bi bi-eye" value="tomate" data-bs-toggle="modal" data-bs-target="#modal_tomate"></i></td>
+          </tr>
+        </tr>        
+          <tr id="mani" value="2000">
+            <td>Marcos</td>
+            <td>Mani</td>
+            <td>1000</td>
+            <td>2</td>
+            <td>2000</td>
+            <td> 
+              <i class="bi bi-eye" value="mani" data-bs-toggle="modal" data-bs-target="#modal_mani"></i>
+            </td>
+          </tr>
+
+          <tr id="repollo" value="2500">
+            <td>Seba</td>
+            <td>Repollo</td>
+            <td>2500</td>
+            <td>1</td>
+            <td>2500</td>
+            <td>
+              <i class="bi bi-eye" value="repollo" data-bs-toggle="modal" data-bs-target="#modal_repollo"></i></td>
+          </tr>
+          <tr id="zanahoria" value="1400">
+            <td>Marcela</td>
+            <td>Zanahoria</td>
+            <td>700</td>
+            <td>2</td>
+            <td>1400</td>
+            <td>
+              <i class="bi bi-eye"  value="carne" data-bs-toggle="modal" data-bs-target="#modal_zanahoria"></i>
+            </td>
+        </tr>
+        <tr id="carne2" value="64000">
+            <td>Humberto</td>
+            <td>Carne</td>
+            <td>8000</td>
+            <td>8</td>
+            <td>64000</td>
+            <td>
+              <i class="bi bi-eye" value="carne" data-bs-toggle="modal" data-bs-target="#modal_carne"></i></td>
+          </tr>
+          <tr id="manzana" value="3000">
+            <td>Ismael</td>
+            <td>manzanas</td>
+            <td>1000</td>
+            <td>3</td>
+            <td >3000</td>
+            <td >
+              <i class="bi bi-eye" value="manzanas" data-bs-toggle="modal" data-bs-target="#modal_manzanas"></i></td>
+          </tr>
+          <tr id="agua" value="1000">
+            <td>Rosario</td>
+            <td>Agua</td>
+            <td>500</td>
+            <td>2</td>
+            <td>1000</td>
+            <td>
+              <i class="bi bi-eye" value="agua" data-bs-toggle="modal" data-bs-target="#modal_agua"></i>
+            </td>
+             </tbody> <!-- cierro el body de la tabla-->
+      </table> <!-- cierro la tabla del body-->
+      <div class="row">
+        <div class="col">
+          <!--
+          <button class="btn btn-primary " onclick="suma()"> Total </button>
+          -->
+        </div>
+      </div>
+</div>
+	</div>
+
+<!-- Modal 1 -->
+<div class="modal fade" id="modal_almendra" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/almendras.jpeg" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="modal_papaprefrita" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/papas-prefritas.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- fin modal 2 -->
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="modal_lechuga" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/lechugs.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin modal 3 -->
+
+  <!-- Modal 4 -->
+  <div class="modal fade" id="modal_carne" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/carne.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin modal 4 -->
+
+  <!-- Modal 5 -->
+  <div class="modal fade" id="modal_papas" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/papas.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- fin modal 5 -->
+
+  <!-- Modal 6 -->
+  <div class="modal fade" id="modal_tomate" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/tomates.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- fin modal 6 -->
+
+  <!-- Modal 7 -->
+  <div class="modal fade" id="modal_mani" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/mani.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- fin modal 7 -->
+
+  <!-- Modal 8 -->
+  <div class="modal fade" id="modal_repollo" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/repollo.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- fin modal 8 -->
+
+  <!-- Modal 9 -->
+  <div class="modal fade" id="modal_zanahoria" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/zanahoria.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- fin modal 9 -->
+
+  <!-- Modal 10 -->
+  <div class="modal fade" id="modal_manzanas" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/zanahoria.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- fin modal 10 -->
+
+  <!-- Modal 11 -->
+  <div class="modal fade" id="modal_agua" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Imagen del producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+
+              <img src="imagenes/agua.png" width="300" height="200"/> <!-- aca se cambia el src de la imagen-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- fin modal 11 -->
+  
+<script type="text/javascript" src="estadisticas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+
+</body>
+</html>
